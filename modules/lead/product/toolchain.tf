@@ -9,6 +9,7 @@ data "template_file" "jenkins_values" {
   vars = {
     product_name           = var.product_name
     ingress_hostname       = "jenkins.${module.toolchain_namespace.name}.${var.cluster_domain}"
+    ingress_wc_hostname       = "*.${module.toolchain_namespace.name}.${var.cluster_domain}"
     artifactory_url        = "artifactory.toolchain.${var.cluster_domain}/docker-registry"
     namespace              = module.toolchain_namespace.name
     toolchain_namespace    = var.toolchain_namespace
