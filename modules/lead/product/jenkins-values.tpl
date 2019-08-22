@@ -16,8 +16,8 @@ master:
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     tls:
     - hosts:
-      - ${ingress_wc_hostname}
-      - ${ingress_hostname}
+      - "${ingress_wc_hostname}"
+      - "${ingress_hostname}"
       secretName: jenkins-ingress-tls
   jenkinsUrlProtocol: https
   serviceType: ClusterIP
