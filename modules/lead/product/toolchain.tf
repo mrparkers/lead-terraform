@@ -57,7 +57,9 @@ module "toolchain_issuer" {
   issuer_type = var.issuer_type
   issuer_server = var.issuer_server
   crd_waiter  = ""
-  provider_dns_enabled = "true"
+  provider_dns_enabled      = "true"
+  provider_dns_region       = var.dns_region
+  provider_dns_hosted_zone  = var.dns_hosted_zone
 
   providers = {
     helm = helm.toolchain

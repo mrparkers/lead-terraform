@@ -15,3 +15,5 @@ variable "ingress_controller_type" {}
 variable "istio_enabled" {
   default = true
 }
+variable "dns_region" {}
+variable "dns_hosted_zone" {}

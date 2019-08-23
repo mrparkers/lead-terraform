@@ -31,3 +31,7 @@ variable "config_context" {
 variable "load_config_file" {
   default = false
 }
+
+variable "region" {
+  default = "us-east-1"
+}

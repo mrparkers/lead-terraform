@@ -74,6 +74,10 @@ provider "helm" {
   }
 }
 
+data "aws_route53_zone" "cluster" {
+  name = var.cluster_domain
+}
+
 module "product" {
   source                  = "../../modules/lead/product"
   cluster_domain          = var.cluster_domain
@@ -82,6 +86,8 @@ module "product" {
   issuer_server           = var.issuer_server
   image_whitelist         = var.image_whitelist
   ingress_controller_type = var.ingress_controller_type
+  dns_region              = var.region
+  dns_hosted_zone         = data.aws_route53_zone.cluster.zone_id
 
   providers = {
     kubernetes.toolchain  = kubernetes.toolchain
