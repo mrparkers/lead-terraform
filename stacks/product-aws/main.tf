@@ -3,6 +3,10 @@ terraform {
   backend "s3" {}
 }
 
+provider "aws" {
+  region  = var.region
+}
+
 provider "kubernetes" {
   alias            = "toolchain"
   load_config_file = var.load_config_file
