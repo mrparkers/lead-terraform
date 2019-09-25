@@ -159,6 +159,8 @@ master:
                     label: "lead-toolchain-terraform"
                     nodeUsageMode: NORMAL
                     serviceAccount: "terraform-iam"
+                      securityContext:
+                        fsGroup: 1000
                     containers:
                       - name: "terraform"
                         image: "${image_repo}/builder-image-terraform:${builder_images_version}"
