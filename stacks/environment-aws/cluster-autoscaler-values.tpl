@@ -19,3 +19,6 @@ autoDiscovery:
 extraArgs:
   balance-similar-node-groups: true
   scale-down-enabled: ${scale_down_enabled}
+
+extraEnv:
+  AWS_SDK_LOAD_CONFIG: "true"
